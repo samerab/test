@@ -1,0 +1,9 @@
+[bugtraq "jira_SCRUM01"]
+    url = https://jira.eckelmann.group/browse/KGLBLGSCRI-%BUGID%
+    logRegex = KGLBLGSCRI-(\\d+)
+[bugtraq "jira_SCRUM03"]
+    url = https://jira.eckelmann.group/browse/KGLSCRMIII-%BUGID%
+    logRegex = KGLSCRMIII-(\\d+)
+[bugtraq "jira_BUGTRACK"]
+    url = https://jira.eckelmann.group/browse/KGLBUGTRAC-%BUGID%
+    logRegex = KGLBUGTRAC-(\\d+)

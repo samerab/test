@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "shared-styles/glowing-text";
+
+@navbarheight: 40px;
+
+body {
+    padding-top: @navbarheight;
+    .navbar {
+        min-height: @navbarheight;
+        .navbar-brand {
+            height: @navbarheight;
+            line-height: 15px;
+        }
+    }
+}

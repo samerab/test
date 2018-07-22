@@ -1,0 +1,11 @@
+@import "colors.less";
+
+input {
+    border-left: 5px solid #bbb;
+    &.ng-dirty.ng-valid[required], .ng-valid.required {
+        border-left: 5px solid @color_valid;
+    }
+    &.ng-dirty.ng-invalid:not(form) {
+        border-left: 5px solid @color_invalid;
+    }
+}

@@ -1,0 +1,30 @@
+
+<eag-panel class="container-panel col-md-9 col-lg-7">
+  <div class="head">
+    <!-- <nav *eagHasAccess="'Admin'" class="head"> -->
+    <nav class="head">
+      <div>
+        <button *ngIf="!editMode" class="btn btn-primary" (click)="edit(true)">{{ 'Button.edit' | translate }}</button>
+        <button *ngIf="!editMode"  class="btn btn-primary" (click)="clear()">{{ 'Button.reset' | translate }}</button>
+      </div>
+
+      <button *ngIf="editMode" class="btn btn-primary" (click)="save()">{{ 'Button.save' | translate }}</button>
+      <button *ngIf="editMode" class="btn btn-primary" (click)="cancel()">{{ 'Button.cancel' | translate }}</button>
+    </nav>
+  </div>
+  <div #body class="body">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div>
+            <canvas id="myCanvas" ></canvas>
+          </div>
+
+        </div>
+
+      </div>
+      </div>
+  </div>
+</eag-panel>
+
+

@@ -1,0 +1,68 @@
+@finalize_time: 2s;
+@pulse_interval: 2s;
+@error_time: 5s;
+@color_active: #ff8c00;
+@color_active_dark: #e37d00;
+@color_active_bloom: #ffa73c;
+@color_finalizing: #008606;
+@color_finalizing_bloom: #29ab2f;
+@color_erroring: #d00000;
+@color_erroring_bloom: #ff1616;
+@keyframes pulse-active {
+    0% {
+        text-shadow: none;
+    }
+    50% {
+        color: @color_active_dark;
+        text-shadow: 0px 0px 10px @color_active_bloom;
+    }
+    100% {
+        text-shadow: none;
+    }
+}
+
+@keyframes pulse-finalizing {
+    0% {
+        color: @color_active;
+    }
+    50% {
+        color: @color_finalizing;
+        text-shadow: 0 0 10px @color_finalizing_bloom;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes pulse-erroring {
+    0% {
+        color: @color_active;
+    }
+    30% {
+        color: @color_erroring;
+        text-shadow: 0 0 10px @color_erroring_bloom;
+        opacity: 1;
+    }
+    80% {
+        color: @color_erroring;
+        text-shadow: 0 0 4px @color_erroring_bloom;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.glow {
+    &.active {
+        color: @color_active;
+        animation: pulse-active @pulse_interval infinite;
+    }
+    &.finalizing {
+        animation: pulse-finalizing @finalize_time 1;
+    }
+    &.erroring {
+        animation: pulse-erroring @error_time 1;
+    }
+}
